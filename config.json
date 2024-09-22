@@ -5,12 +5,12 @@
     ],
 
     "capacities" : [
-        2,
-        1
+        67,
+        33
     ],
 
     
-    "lbAlgorithm" : 0, 
+    "lbAlgorithm" : 1, 
 
     "port" : ":9000",
 

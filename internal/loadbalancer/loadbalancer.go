@@ -39,14 +39,14 @@ func NewLoadBalancer(config *config.Config) *LoadBalancer {
 		return &LoadBalancer{
 			algorithm: alg,
 		}
-	// case 1:
-	// 	alg, err := algorithms.NewWeightedRoundRobin(serverList, config.Capacities)
-	// 	if err != nil {
-	// 		log.Fatal(err.Error())
-	// 	}
-	// 	return &LoadBalancer{
-	// 		algorithm: alg,
-	// 	}
+	case 1:
+		alg, err := algorithms.NewWeightedRoundRobin(serverList, config.Capacities)
+		if err != nil {
+			log.Fatal(err.Error())
+		}
+		return &LoadBalancer{
+			algorithm: alg,
+		}
 	default:
 		log.Fatal("cant determine the Load Balancing algorithm")
 		return nil

@@ -8,11 +8,11 @@ import (
 )
 
 type Config struct {
-	Servers             []string  `json:"servers"`
-	Capacities          []float32 `json:"capacities"`
-	Algorithm           int       `json:"lbAlgorithm"`
-	Port                string    `json:"port"`
-	HealthCheckInterval string    `json:"healthCheckInterval"`
+	Servers             []string `json:"servers"`
+	Capacities          []int    `json:"capacities"`
+	Algorithm           int      `json:"lbAlgorithm"`
+	Port                string   `json:"port"`
+	HealthCheckInterval string   `json:"healthCheckInterval"`
 }
 
 func GetConfig() *Config {

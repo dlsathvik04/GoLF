@@ -9,6 +9,8 @@ the field ```lbAlgorithm``` stands for Load balancing algorithm it supports the 
 ```
 0 - Round Robin Algorithm
 1 - Weighted Round Robin Algorithm (To be implemented)
+    (for this the configuration field should be an array of integers representing the percentage of requests to be sent
+    the sum of all the elements should be 100.)
 2 - Hashed IP algorithm (To be implemented)
 ```
 
@@ -22,8 +24,8 @@ A sample configuration for load balancing is given below.
     ],
 
     "capacities" : [
-        2,
-        1
+        67,
+        33
     ],
 
     
@@ -39,6 +41,6 @@ A sample configuration for load balancing is given below.
 
 - [ ] Load Balancing
     - [X] Round Robin
-    - [ ] Weighted Round Robin
+    - [X] Weighted Round Robin
     - [ ] Hashed IP 
 - [ ] Firewall
