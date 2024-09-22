@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"loadbalancer/internal/config"
-	"loadbalancer/internal/loadbalancer"
 	"net/http"
+
+	"github.com/dlsathvik04/GoLF/internal/config"
+	"github.com/dlsathvik04/GoLF/internal/loadbalancer"
 )
 
 func main() {

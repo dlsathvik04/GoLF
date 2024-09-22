@@ -3,8 +3,9 @@ package algorithms
 import (
 	"errors"
 	"fmt"
-	"loadbalancer/internal/server"
 	"sync"
+
+	"github.com/dlsathvik04/GoLF/internal/server"
 )
 
 type RoundRobin struct {

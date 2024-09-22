@@ -2,8 +2,9 @@ package algorithms
 
 import (
 	"errors"
-	"loadbalancer/internal/server"
 	"sync"
+
+	"github.com/dlsathvik04/GoLF/internal/server"
 )
 
 type WeightedRoundRobin struct {

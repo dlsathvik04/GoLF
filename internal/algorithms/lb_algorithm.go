@@ -1,8 +1,9 @@
 package algorithms
 
 import (
-	"loadbalancer/internal/server"
 	"log"
+
+	"github.com/dlsathvik04/GoLF/internal/server"
 )
 
 type LBAlgorithm interface {

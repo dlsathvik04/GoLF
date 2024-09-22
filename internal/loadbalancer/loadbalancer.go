@@ -2,12 +2,13 @@ package loadbalancer
 
 import (
 	"fmt"
-	"loadbalancer/internal/algorithms"
-	"loadbalancer/internal/config"
-	"loadbalancer/internal/server"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/dlsathvik04/GoLF/internal/algorithms"
+	"github.com/dlsathvik04/GoLF/internal/config"
+	"github.com/dlsathvik04/GoLF/internal/server"
 )
 
 type LoadBalancer struct {
