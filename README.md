@@ -9,7 +9,9 @@ the field ```lbAlgorithm``` stands for Load balancing algorithm it supports the 
 ```
 0 - Round Robin Algorithm
 1 - Weighted Round Robin Algorithm (To be implemented)
-    (for this the configuration field should be an array of integers representing the percentage of requests to be sent
+    (for this the configuration field should be an array of integers.
+    representing the percentage of requests to be sent.
+    the server and the capacity are matched by order.
     the sum of all the elements should be 100.)
 2 - Hashed IP algorithm (To be implemented)
 ```
