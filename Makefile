@@ -2,7 +2,7 @@
 
 # Change these variables as necessary.
 MAIN_PACKAGE_PATH := ./cmd
-BINARY_NAME := example
+BINARY_NAME := loadbalancer
 BIN_DIR := ./bin
 TMP_DIR := ./tmp
 
@@ -96,7 +96,7 @@ push: tidy audit no-dirty
 
 ## production/deploy: deploy the application to production
 .PHONY: production/deploy
-production/deploy: confirm tidy audit no-dirty
+production/deploy: tidy audit no-dirty
 	GOOS=linux GOARCH=amd64 go build -ldflags='-s' -o=$(TMP_DIR)/linux_amd64/$(BINARY_NAME) $(MAIN_PACKAGE_PATH)
 	upx -5 $(TMP_DIR)/linux_amd64/$(BINARY_NAME)
 	# Include additional deployment steps here...

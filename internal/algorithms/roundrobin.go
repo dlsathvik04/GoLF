@@ -32,12 +32,12 @@ func (rr *RoundRobin) GetNextServer() (*server.Server, error) {
 	numServers := len(rr.servers)
 
 	for i := 0; i < numServers; i++ {
-		curr_server := (curr + i) % numServers
-		fmt.Println(curr_server)
-		if rr.servers[curr_server].IsHealthy {
-			rr.current = (curr_server + 1) % numServers
-			fmt.Println(rr.servers[curr_server])
-			return rr.servers[curr_server], nil
+		currServer := (curr + i) % numServers
+		fmt.Println(currServer)
+		if rr.servers[currServer].IsHealthy {
+			rr.current = (currServer + 1) % numServers
+			fmt.Println(rr.servers[currServer])
+			return rr.servers[currServer], nil
 		}
 	}
 
