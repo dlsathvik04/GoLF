@@ -34,3 +34,11 @@ A sample configuration for load balancing is given below.
     "healthCheckInterval" : "1s"
 }
 ```
+
+## Development Progress
+
+- [ ] Load Balancing
+    - [ ] Round Robin
+    - [ ] Weighted Round Robin
+    - [ ] Hashed IP 
+- [ ] Firewall
