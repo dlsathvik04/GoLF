@@ -1,5 +1,6 @@
 bin
 temp
 .env
+tmp
 
 # OnlyText-Backend/
