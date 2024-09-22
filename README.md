@@ -38,7 +38,7 @@ A sample configuration for load balancing is given below.
 ## Development Progress
 
 - [ ] Load Balancing
-    - [ ] Round Robin
+    - [X] Round Robin
     - [ ] Weighted Round Robin
     - [ ] Hashed IP 
 - [ ] Firewall
