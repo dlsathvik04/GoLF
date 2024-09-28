@@ -3,6 +3,7 @@ package algorithms
 import (
 	"errors"
 	"fmt"
+	"net/http"
 	"sync"
 
 	"github.com/dlsathvik04/GoLF/internal/server"
@@ -25,7 +26,7 @@ func NewRoundRobin(serverList []*server.Server) (*RoundRobin, error) {
 	}, nil
 }
 
-func (rr *RoundRobin) GetNextServer() (*server.Server, error) {
+func (rr *RoundRobin) GetNextServer(_ *http.Request) (*server.Server, error) {
 	rr.mu.Lock()
 	defer rr.mu.Unlock()
 	curr := rr.current

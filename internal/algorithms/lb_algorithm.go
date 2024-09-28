@@ -2,12 +2,13 @@ package algorithms
 
 import (
 	"log"
+	"net/http"
 
 	"github.com/dlsathvik04/GoLF/internal/server"
 )
 
 type LBAlgorithm interface {
-	GetNextServer() (*server.Server, error)
+	GetNextServer(req *http.Request) (*server.Server, error)
 }
 
 func NewLBAlgorithm(serverList []*server.Server, priorityList []int) LBAlgorithm {

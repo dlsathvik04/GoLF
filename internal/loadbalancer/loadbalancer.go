@@ -47,6 +47,14 @@ func NewLoadBalancer(config *config.Config) *LoadBalancer {
 		return &LoadBalancer{
 			algorithm: alg,
 		}
+	case 2:
+		alg, err := algorithms.NewHashedIP(serverList)
+		if err != nil {
+			log.Fatal(err.Error())
+		}
+		return &LoadBalancer{
+			algorithm: alg,
+		}
 	default:
 		log.Fatal("cant determine the Load Balancing algorithm")
 		return nil
@@ -55,7 +63,7 @@ func NewLoadBalancer(config *config.Config) *LoadBalancer {
 
 func (lb *LoadBalancer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Got a  request")
-	server, err := lb.algorithm.GetNextServer()
+	server, err := lb.algorithm.GetNextServer(r)
 	if err != nil {
 		fmt.Println(err.Error())
 		log.Fatal("error getting a new server")

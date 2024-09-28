@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"math/rand"
+	"net/http"
 	"sync"
 
 	"github.com/dlsathvik04/GoLF/internal/server"
@@ -55,7 +56,7 @@ func NewWeightedRoundRobin(serverList []*server.Server, capacities []int) (*Weig
 	}, nil
 }
 
-func (rr *WeightedRoundRobin) GetNextServer() (*server.Server, error) {
+func (rr *WeightedRoundRobin) GetNextServer(_ *http.Request) (*server.Server, error) {
 	rr.mu.Lock()
 	defer rr.mu.Unlock()
 	curr := rr.current
